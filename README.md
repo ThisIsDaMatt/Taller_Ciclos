@@ -9,6 +9,12 @@ Repositorio para el tercer taller del curso de Lógica de Programación, enfocad
 - Matías Múnera Mazo
 
 ## Archivos del repositorio
+- **Juego_Adivinar**: Juego donde el usuario debe adivinar un numero aleatorio entre n y m.
+
+- **Menu_Infinito**: Programa donde se muestra la tabla de multiplicar de un numero dado por el usuario.
+
+- **Menu_Infinito**:
+
 - **Menu_Infinito.java**: Menu que se repite de manera indefinida hasta que el usuario elige salir. Cuenta con 4 opciones de problemas que se resuelven usando ciclos.
 
 - **Teoria_Ciclos.md**: Archivo Markdown con las respuestas de las preguntas de teoría de Ciclos en Java propuestas por el profesor.
