@@ -30,6 +30,48 @@ public class Menu_Infinito {
                 case 3:
                     System.out.println("Calcular las raices de una ecuación cuadrática");
 
+                    System.out.print("Ingrese el coeficiente de x²: ");
+                    double a = sc.nextDouble();
+
+                    if (a == 0) {
+                        System.out.println("No es una funcion cuadratica!");
+                        System.out.println("No se puede continuar.");
+
+                        break;
+                    }
+
+                    System.out.print("Ingrese el coeficiente de x: ");
+                    double b = sc.nextDouble();
+
+                    System.out.print("Ingrese el termino independiente: ");
+                    double c = sc.nextDouble();
+
+                    double discriminador = (b*b) - (4*a*c);
+
+                    if (discriminador < 0) {
+                        double raizReal = (-b) / (2*a);
+                        double raizCompleja = Math.sqrt(-discriminador) / (2*a);
+
+                        String raizUno = raizReal + " + " + raizCompleja + "i";
+                        String raizDos = raizReal + " - " + raizCompleja + "i";
+
+                        System.out.println("La raiz uno es: " + raizUno);
+                        System.out.println("La raiz dos es: " + raizDos);
+
+                    } else if (discriminador == 0) {
+                        double raiz = (-b) / (2*a);
+
+                        System.out.println("La raiz es: " + raiz);
+
+                    } else {
+                        double raizUno = ((-b) + Math.sqrt(discriminador)) / (2*a);
+                        double raizDos = ((-b) - Math.sqrt((discriminador))) / (2*a);
+
+                        System.out.println("La raiz uno es: " + raizUno);
+                        System.out.println("La raiz dos es: " + raizDos);
+
+                    }
+
                     break;
                 case 4:
                     System.out.println("=================================");
