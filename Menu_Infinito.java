@@ -14,12 +14,12 @@ public class Menu_Infinito {
         System.out.println("2. Calcular el n-esimo número primo");
         System.out.println("3. Calcular las raices de una ecuación cuadrática");
         System.out.println("4. Calcular el promedio de n números");
-        System.out.println("0. Salir");
+        System.out.println("5. Salir");
         System.out.println("=================================================");
         
         Integer opcion = sc.nextInt();
 
-        while (opcion != 0) {
+        while (opcion != 5) {
             switch (opcion) {
                 case 1:
                     System.out.println("Sumar n-esimo término de la serie de Fibonacci");
@@ -29,6 +29,7 @@ public class Menu_Infinito {
                     break;
                 case 3:
                     System.out.println("Calcular las raices de una ecuación cuadrática");
+
                     break;
                 case 4:
                     System.out.println("=================================");
@@ -66,7 +67,7 @@ public class Menu_Infinito {
             System.out.println("2. Calcular el n-esimo número primo");
             System.out.println("3. Calcular las raices de una ecuación cuadrática");
             System.out.println("4. Calcular el promedio de n números");
-            System.out.println("0. Salir");
+            System.out.println("5. Salir");
             System.out.println("=================================================");
 
             opcion = sc.nextInt();
