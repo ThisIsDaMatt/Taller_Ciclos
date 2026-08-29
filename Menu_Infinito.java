@@ -48,8 +48,8 @@ public class Menu_Infinito {
                     int primerTermino = 0;
                     int segundoTermino = 1;
 
-                    int terminoPrevio = primerTermino;
-                    int termino = segundoTermino;
+                    long terminoPrevio = primerTermino;
+                    long termino = segundoTermino;
 
                     if (numeroTerminos == 1) {
                         System.out.println("=========================");
@@ -67,7 +67,7 @@ public class Menu_Infinito {
 
                     // Se itera dos veces menos porque el caso 1 y 2 ya estan resueltos.
                     for (int i = 0; i < (numeroTerminos - 2); i++) {
-                        int terminoSiguiente = termino + terminoPrevio;
+                        long terminoSiguiente = termino + terminoPrevio;
                         terminoPrevio = termino;
                         termino = terminoSiguiente;
                     }
