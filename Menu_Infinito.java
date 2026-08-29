@@ -1,12 +1,19 @@
 import java.util.Scanner;
 
 public class Menu_Infinito {
-    static void main(String[] args) {
+    public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
 
         System.out.println("=================================================");
-        System.out.println("Bienvenido al programa");
+        System.out.println("______                                                 _      _           \r\n" + //
+                        "| ___ \\                                               (_)    | |          \r\n" + //
+                        "| |_/ / __ ___   __ _ _ __ __ _ _ __ ___   __ _    ___ _  ___| | ___  ___ \r\n" + //
+                        "|  __/ '__/ _ \\ / _` | '__/ _` | '_ ` _ \\ / _` |  / __| |/ __| |/ _ \\/ __|\r\n" + //
+                        "| |  | | | (_) | (_| | | | (_| | | | | | | (_| | | (__| | (__| | (_) \\__ \\\r\n" + //
+                        "\\_|  |_|  \\___/ \\__, |_|  \\__,_|_| |_| |_|\\__,_|  \\___|_|\\___|_|\\___/|___/\r\n" + //
+                        "                 __/ |                                                    \r\n" + //
+                        "                |___/                                                     ");
         System.out.println("=================================================");
         System.out.println("Por favor, escoja una opción:");
         System.out.println("=================================================");
@@ -146,7 +153,14 @@ public class Menu_Infinito {
             System.out.println();
 
             System.out.println("=================================================");
-            System.out.println("Bienvenido al programa");
+            System.out.println("______                                                 _      _           \r\n" + //
+                                "| ___ \\                                               (_)    | |          \r\n" + //
+                                "| |_/ / __ ___   __ _ _ __ __ _ _ __ ___   __ _    ___ _  ___| | ___  ___ \r\n" + //
+                                "|  __/ '__/ _ \\ / _` | '__/ _` | '_ ` _ \\ / _` |  / __| |/ __| |/ _ \\/ __|\r\n" + //
+                                "| |  | | | (_) | (_| | | | (_| | | | | | | (_| | | (__| | (__| | (_) \\__ \\\r\n" + //
+                                "\\_|  |_|  \\___/ \\__, |_|  \\__,_|_| |_| |_|\\__,_|  \\___|_|\\___|_|\\___/|___/\r\n" + //
+                                "                 __/ |                                                    \r\n" + //
+                                "                |___/                                                     ");
             System.out.println("=================================================");
             System.out.println("Por favor, escoja una opción:");
             System.out.println("=================================================");
