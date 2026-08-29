@@ -16,7 +16,7 @@ public class Menu_Infinito {
         System.out.println("4. Calcular el promedio de n números");
         System.out.println("5. Salir");
         System.out.println("=================================================");
-        
+
         int opcion = sc.nextInt();
 
         while (opcion != 5) {
@@ -24,9 +24,11 @@ public class Menu_Infinito {
                 case 1:
                     System.out.println("Sumar n-esimo término de la serie de Fibonacci");
                     break;
+
                 case 2:
                     System.out.println("Calcular el n-esimo número primo");
                     break;
+
                 case 3:
                     System.out.println("Calcular las raices de una ecuación cuadrática");
 
@@ -46,11 +48,11 @@ public class Menu_Infinito {
                     System.out.print("Ingrese el termino independiente: ");
                     double c = sc.nextDouble();
 
-                    double discriminador = (b*b) - (4*a*c);
+                    double discriminador = (b * b) - (4 * a * c);
 
                     if (discriminador < 0) {
-                        double raizReal = (-b) / (2*a);
-                        double raizCompleja = Math.sqrt(-discriminador) / (2*a);
+                        double raizReal = (-b) / (2 * a);
+                        double raizCompleja = Math.sqrt(-discriminador) / (2 * a);
 
                         String raizUno = raizReal + " + " + raizCompleja + "i";
                         String raizDos = raizReal + " - " + raizCompleja + "i";
@@ -59,13 +61,13 @@ public class Menu_Infinito {
                         System.out.println("La raiz dos es: " + raizDos);
 
                     } else if (discriminador == 0) {
-                        double raiz = (-b) / (2*a);
+                        double raiz = (-b) / (2 * a);
 
                         System.out.println("La raiz es: " + raiz);
 
                     } else {
-                        double raizUno = ((-b) + Math.sqrt(discriminador)) / (2*a);
-                        double raizDos = ((-b) - Math.sqrt((discriminador))) / (2*a);
+                        double raizUno = ((-b) + Math.sqrt(discriminador)) / (2 * a);
+                        double raizDos = ((-b) - Math.sqrt((discriminador))) / (2 * a);
 
                         System.out.println("La raiz uno es: " + raizUno);
                         System.out.println("La raiz dos es: " + raizDos);
@@ -94,8 +96,9 @@ public class Menu_Infinito {
                     System.out.println("===========================");
                     System.out.println("El promedio es: " + promedio);
                     System.out.println("===========================");
-    
+
                     break;
+
                 default:
                     System.out.println("Por favor, ingrese una opción válida");
             }
