@@ -31,7 +31,27 @@ public class Menu_Infinito {
                     System.out.println("Calcular las raices de una ecuación cuadrática");
                     break;
                 case 4:
+                    System.out.println("=================================");
                     System.out.println("Calcular el promedio de n números");
+                    System.out.println("=================================");
+                    System.out.print("Ingresa la cantidad de numeros a calcular: ");
+
+                    int n = sc.nextInt();
+
+                    double suma = 0;
+
+                    for (int i = 1; i <= n; i++) {
+                        System.out.print("Ingresa el número " + i + ": ");
+                        double numero = sc.nextDouble();
+                        suma += numero;
+                    }
+
+                    double promedio = suma / n;
+
+                    System.out.println("===========================");
+                    System.out.println("El promedio es: " + promedio);
+                    System.out.println("===========================");
+    
                     break;
                 default:
                     System.out.println("Por favor, ingrese una opción válida");
