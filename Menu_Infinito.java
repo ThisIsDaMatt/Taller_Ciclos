@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Menu_Infinito {
-    public static void main(String[] args) {
+    static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
 
@@ -16,6 +16,7 @@ public class Menu_Infinito {
         System.out.println("4. Calcular el promedio de n números");
         System.out.println("5. Salir");
         System.out.println("=================================================");
+        System.out.print("Ingrese su selección: ");
 
         int opcion = sc.nextInt();
 
@@ -112,6 +113,7 @@ public class Menu_Infinito {
                     }
 
                     break;
+
                 case 4:
                     System.out.println("=================================");
                     System.out.println("Calcular el promedio de n números");
@@ -154,6 +156,7 @@ public class Menu_Infinito {
             System.out.println("4. Calcular el promedio de n números");
             System.out.println("5. Salir");
             System.out.println("=================================================");
+            System.out.print("Ingrese su selección: ");
 
             opcion = sc.nextInt();
         }
