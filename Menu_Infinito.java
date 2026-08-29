@@ -17,7 +17,7 @@ public class Menu_Infinito {
         System.out.println("5. Salir");
         System.out.println("=================================================");
         
-        Integer opcion = sc.nextInt();
+        int opcion = sc.nextInt();
 
         while (opcion != 5) {
             switch (opcion) {
