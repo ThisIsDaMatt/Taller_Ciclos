@@ -23,6 +23,43 @@ public class Menu_Infinito {
             switch (opcion) {
                 case 1:
                     System.out.println("Sumar n-esimo término de la serie de Fibonacci");
+
+                    System.out.print("Ingrese el termino que quiere encontrar: ");
+
+                    int numeroTerminos = sc.nextInt();
+
+                    if (numeroTerminos <= 0) {
+                        System.out.println("El termino pedido es 0 o negativo!");
+                        System.out.println("No se puede continuar.");
+
+                        break;
+                    }
+
+                    int primerTermino = 0;
+                    int segundoTermino = 1;
+
+                    int terminoPrevio = primerTermino;
+                    int termino = segundoTermino;
+
+                    if (numeroTerminos == 1) {
+                        System.out.println("El termino " + numeroTerminos + " es: " + primerTermino);
+
+                        break;
+                    } else if (numeroTerminos == 2) {
+                        System.out.println("El termino " + numeroTerminos + " es: " + segundoTermino);
+
+                        break;
+                    }
+
+                    // Se itera dos veces menos porque el caso 1 y 2 ya estan resueltos.
+                    for (int i = 0; i < (numeroTerminos - 2); i++) {
+                        int terminoSiguiente = termino + terminoPrevio;
+                        terminoPrevio = termino;
+                        termino = terminoSiguiente;
+                    }
+
+                    System.out.println("El termino " + numeroTerminos + " es: " + termino);
+
                     break;
 
                 case 2:
