@@ -58,6 +58,9 @@ public class Menu_Infinito {
                     System.out.println("Por favor, ingrese una opción válida");
             }
 
+            // Espaciador con la salida anterior.
+            System.out.println();
+
             System.out.println("=================================================");
             System.out.println("Bienvenido al programa");
             System.out.println("=================================================");
