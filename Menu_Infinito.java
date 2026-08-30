@@ -7,19 +7,19 @@ public class Menu_Infinito {
 
         System.out.println("=================================================");
         System.out.println("______                                                 _      _           \r\n" + //
-                        "| ___ \\                                               (_)    | |          \r\n" + //
-                        "| |_/ / __ ___   __ _ _ __ __ _ _ __ ___   __ _    ___ _  ___| | ___  ___ \r\n" + //
-                        "|  __/ '__/ _ \\ / _` | '__/ _` | '_ ` _ \\ / _` |  / __| |/ __| |/ _ \\/ __|\r\n" + //
-                        "| |  | | | (_) | (_| | | | (_| | | | | | | (_| | | (__| | (__| | (_) \\__ \\\r\n" + //
-                        "\\_|  |_|  \\___/ \\__, |_|  \\__,_|_| |_| |_|\\__,_|  \\___|_|\\___|_|\\___/|___/\r\n" + //
-                        "                 __/ |                                                    \r\n" + //
-                        "                |___/                                                     ");
+                "| ___ \\                                               (_)    | |          \r\n" + //
+                "| |_/ / __ ___   __ _ _ __ __ _ _ __ ___   __ _    ___ _  ___| | ___  ___ \r\n" + //
+                "|  __/ '__/ _ \\ / _` | '__/ _` | '_ ` _ \\ / _` |  / __| |/ __| |/ _ \\/ __|\r\n" + //
+                "| |  | | | (_) | (_| | | | (_| | | | | | | (_| | | (__| | (__| | (_) \\__ \\\r\n" + //
+                "\\_|  |_|  \\___/ \\__, |_|  \\__,_|_| |_| |_|\\__,_|  \\___|_|\\___|_|\\___/|___/\r\n" + //
+                "                 __/ |                                                    \r\n" + //
+                "                |___/                                                     ");
         System.out.println("=================================================");
         System.out.println("Por favor, escoja una opción:");
         System.out.println("=================================================");
         System.out.println("1. Sumar n-esimo término de la serie de Fibonacci");
         System.out.println("2. Calcular el n-esimo número primo");
-        System.out.println("3. Calcular las raices de una ecuación cuadrática");
+        System.out.println("3. Calcular las raíces de una ecuación cuadrática");
         System.out.println("4. Calcular el promedio de n números");
         System.out.println("5. Salir");
         System.out.println("=================================================");
@@ -65,7 +65,7 @@ public class Menu_Infinito {
                         break;
                     }
 
-                    // Se itera dos veces menos porque el caso 1 y 2 ya estan resueltos.
+                    // Se itera dos veces menos porque el caso 1 y 2 ya están resueltos.
                     for (int i = 0; i < (numeroTerminos - 2); i++) {
                         long terminoSiguiente = termino + terminoPrevio;
                         terminoPrevio = termino;
@@ -85,18 +85,30 @@ public class Menu_Infinito {
                     System.out.print("¿Qué número primo quieres encontrar (n): ");
                     int num = sc.nextInt();
 
+                    int numeroActual = 0;
+
                     if (num <= 0) {
                         System.out.println("El termino pedido es 0 o negativo!");
                         System.out.println("No se puede continuar.");
+
+                        // El 2 es el unico par primo, se debe tratar especialmente.
+                    } else if (num == 1) {
+                        numeroActual = 2;
+
+                        // La raiz de 3 es 1 cuando se redondea, no funciona bien con el algoritmo.
+                    } else if (num == 2) {
+                        numeroActual = 3;
+
                     } else {
-                        int contador = 0;
-                        int numeroActual = 1;
+                        int contador = 2; // Los primeros dos casos están cubiertos.
+                        numeroActual = 3;
 
                         while (contador < num) {
-                            numeroActual++;
                             boolean esPrimo = true;
+                            numeroActual = numeroActual + 2;
 
-                            for (int i = 2; i <= Math.sqrt(numeroActual); i++) {
+                            // Incremento para que i solo sea impar
+                            for (int i = 3; i <= Math.sqrt(numeroActual); i = i + 2) {
                                 if (numeroActual % i == 0) {
                                     esPrimo = false;
                                     break;
@@ -107,23 +119,24 @@ public class Menu_Infinito {
                                 contador++;
                             }
                         }
-
-                        System.out.println("=================================");
-                        System.out.println("El primo número " + num + " es: " + numeroActual);
-                        System.out.println("=================================");
                     }
+
+                    System.out.println("=================================");
+                    System.out.println("El primo número " + num + " es: " + numeroActual);
+                    System.out.println("=================================");
+
                     break;
 
                 case 3:
                     System.out.println("==============================================");
-                    System.out.println("Calcular las raices de una ecuación cuadrática");
+                    System.out.println("Calcular las raíces de una ecuación cuadrática");
                     System.out.println("==============================================");
 
                     System.out.print("Ingrese el coeficiente de x²: ");
                     double a = sc.nextDouble();
 
                     if (a == 0) {
-                        System.out.println("No es una funcion cuadratica!");
+                        System.out.println("No es una función cuadrática!");
                         System.out.println("No se puede continuar.");
 
                         break;
@@ -159,7 +172,7 @@ public class Menu_Infinito {
                     } else {
                         double raizUno = ((-b) + Math.sqrt(discriminador)) / (2 * a);
                         double raizDos = ((-b) - Math.sqrt((discriminador))) / (2 * a);
-                        
+
                         System.out.println("==========================================================");
                         System.out.println("La raiz uno es: " + raizUno);
                         System.out.println("La raiz dos es: " + raizDos);
@@ -173,7 +186,7 @@ public class Menu_Infinito {
                     System.out.println("=================================");
                     System.out.println("Calcular el promedio de n números");
                     System.out.println("=================================");
-                    System.out.print("Ingresa la cantidad de numeros a calcular: ");
+                    System.out.print("Ingresa la cantidad de números a calcular: ");
 
                     int n = sc.nextInt();
 
@@ -202,19 +215,19 @@ public class Menu_Infinito {
 
             System.out.println("=================================================");
             System.out.println("______                                                 _      _           \r\n" + //
-                                "| ___ \\                                               (_)    | |          \r\n" + //
-                                "| |_/ / __ ___   __ _ _ __ __ _ _ __ ___   __ _    ___ _  ___| | ___  ___ \r\n" + //
-                                "|  __/ '__/ _ \\ / _` | '__/ _` | '_ ` _ \\ / _` |  / __| |/ __| |/ _ \\/ __|\r\n" + //
-                                "| |  | | | (_) | (_| | | | (_| | | | | | | (_| | | (__| | (__| | (_) \\__ \\\r\n" + //
-                                "\\_|  |_|  \\___/ \\__, |_|  \\__,_|_| |_| |_|\\__,_|  \\___|_|\\___|_|\\___/|___/\r\n" + //
-                                "                 __/ |                                                    \r\n" + //
-                                "                |___/                                                     ");
+                    "| ___ \\                                               (_)    | |          \r\n" + //
+                    "| |_/ / __ ___   __ _ _ __ __ _ _ __ ___   __ _    ___ _  ___| | ___  ___ \r\n" + //
+                    "|  __/ '__/ _ \\ / _` | '__/ _` | '_ ` _ \\ / _` |  / __| |/ __| |/ _ \\/ __|\r\n" + //
+                    "| |  | | | (_) | (_| | | | (_| | | | | | | (_| | | (__| | (__| | (_) \\__ \\\r\n" + //
+                    "\\_|  |_|  \\___/ \\__, |_|  \\__,_|_| |_| |_|\\__,_|  \\___|_|\\___|_|\\___/|___/\r\n" + //
+                    "                 __/ |                                                    \r\n" + //
+                    "                |___/                                                     ");
             System.out.println("=================================================");
             System.out.println("Por favor, escoja una opción:");
             System.out.println("=================================================");
             System.out.println("1. Sumar n-esimo término de la serie de Fibonacci");
             System.out.println("2. Calcular el n-esimo número primo");
-            System.out.println("3. Calcular las raices de una ecuación cuadrática");
+            System.out.println("3. Calcular las raíces de una ecuación cuadrática");
             System.out.println("4. Calcular el promedio de n números");
             System.out.println("5. Salir");
             System.out.println("=================================================");
