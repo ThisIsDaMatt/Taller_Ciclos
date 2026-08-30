@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Juego_Adivinar {
@@ -14,11 +15,32 @@ public class Juego_Adivinar {
                         "                                                                                   \r\n" + //
                         "                                                                                   ");
         System.out.println("============================================================");
-        System.out.print("Ingresa el límite inferior (n): ");
-        int n = sc.nextInt();
 
-        System.out.print("Ingresa el límite superior (m): ");
-        int m = sc.nextInt();
+        int n = 0;
+        boolean nValido = false;
+        while (!nValido) {
+            try {
+                System.out.print("Ingresa el límite inferior (n): ");
+                n = sc.nextInt();
+                nValido = true;
+            } catch (InputMismatchException e) {
+                System.out.println("Eso no es un número válido. Intenta de nuevo.");
+                sc.next();
+            }
+        }
+
+        int m = 0;
+        boolean mValido = false;
+        while (!mValido) {
+            try {
+                System.out.print("Ingresa el límite superior (m): ");
+                m = sc.nextInt();
+                mValido = true;
+            } catch (InputMismatchException e) {
+                System.out.println("Eso no es un número válido. Intenta de nuevo.");
+                sc.next();
+            }
+        }
 
         int numeroSecreto = (int) (Math.random() * (m - n + 1)) + n;
 
@@ -29,8 +51,20 @@ public class Juego_Adivinar {
         System.out.println("Adivina el número entre " + n + " y " + m);
 
         while (!acerto) {
-            System.out.print("Tu intento: ");
-            intento = sc.nextInt();
+            boolean intentoValido = false;
+            intento = 0;
+
+            while (!intentoValido) {
+                try {
+                    System.out.print("Tu intento: ");
+                    intento = sc.nextInt();
+                    intentoValido = true;
+                } catch (InputMismatchException e) {
+                    System.out.println("Eso no es un número válido. Intenta de nuevo.");
+                    sc.next();
+                }
+            }
+
             intentos++;
 
             if (intento == numeroSecreto) {
