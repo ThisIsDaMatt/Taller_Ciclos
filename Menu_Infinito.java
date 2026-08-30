@@ -30,7 +30,9 @@ public class Menu_Infinito {
         while (opcion != 5) {
             switch (opcion) {
                 case 1:
+                    System.out.println("==============================================");
                     System.out.println("Sumar n-esimo término de la serie de Fibonacci");
+                    System.out.println("==============================================");
 
                     System.out.print("Ingrese el termino que quiere encontrar: ");
 
@@ -50,11 +52,15 @@ public class Menu_Infinito {
                     int termino = segundoTermino;
 
                     if (numeroTerminos == 1) {
+                        System.out.println("=========================");
                         System.out.println("El termino " + numeroTerminos + " es: " + primerTermino);
+                        System.out.println("=========================");
 
                         break;
                     } else if (numeroTerminos == 2) {
+                        System.out.println("=========================");
                         System.out.println("El termino " + numeroTerminos + " es: " + segundoTermino);
+                        System.out.println("=========================");
 
                         break;
                     }
@@ -65,17 +71,53 @@ public class Menu_Infinito {
                         terminoPrevio = termino;
                         termino = terminoSiguiente;
                     }
-
+                    System.out.println("=========================");
                     System.out.println("El termino " + numeroTerminos + " es: " + termino);
+                    System.out.println("=========================");
 
                     break;
 
                 case 2:
+                    System.out.println("================================");
                     System.out.println("Calcular el n-esimo número primo");
+                    System.out.println("================================");
+
+                    System.out.print("¿Qué número primo quieres encontrar (n): ");
+                    int num = sc.nextInt();
+
+                    if (num <= 0) {
+                        System.out.println("El termino pedido es 0 o negativo!");
+                        System.out.println("No se puede continuar.");
+                    } else {
+                        int contador = 0;
+                        int numeroActual = 1;
+
+                        while (contador < num) {
+                            numeroActual++;
+                            boolean esPrimo = true;
+
+                            for (int i = 2; i <= Math.sqrt(numeroActual); i++) {
+                                if (numeroActual % i == 0) {
+                                    esPrimo = false;
+                                    break;
+                                }
+                            }
+
+                            if (esPrimo) {
+                                contador++;
+                            }
+                        }
+
+                        System.out.println("=================================");
+                        System.out.println("El primo número " + num + " es: " + numeroActual);
+                        System.out.println("=================================");
+                    }
                     break;
 
                 case 3:
+                    System.out.println("==============================================");
                     System.out.println("Calcular las raices de una ecuación cuadrática");
+                    System.out.println("==============================================");
 
                     System.out.print("Ingrese el coeficiente de x²: ");
                     double a = sc.nextDouble();
@@ -102,20 +144,26 @@ public class Menu_Infinito {
                         String raizUno = raizReal + " + " + raizCompleja + "i";
                         String raizDos = raizReal + " - " + raizCompleja + "i";
 
+                        System.out.println("==========================================================");
                         System.out.println("La raiz uno es: " + raizUno);
                         System.out.println("La raiz dos es: " + raizDos);
+                        System.out.println("==========================================================");
 
                     } else if (discriminador == 0) {
                         double raiz = (-b) / (2 * a);
 
+                        System.out.println("====================");
                         System.out.println("La raiz es: " + raiz);
+                        System.out.println("====================");
 
                     } else {
                         double raizUno = ((-b) + Math.sqrt(discriminador)) / (2 * a);
                         double raizDos = ((-b) - Math.sqrt((discriminador))) / (2 * a);
-
+                        
+                        System.out.println("==========================================================");
                         System.out.println("La raiz uno es: " + raizUno);
                         System.out.println("La raiz dos es: " + raizDos);
+                        System.out.println("==========================================================");
 
                     }
 
@@ -175,7 +223,9 @@ public class Menu_Infinito {
             opcion = sc.nextInt();
         }
 
+        System.out.println("=========================================");
         System.out.println("Gracias por usar el programa, hasta luego");
+        System.out.println("=========================================");
 
         sc.close();
     }
