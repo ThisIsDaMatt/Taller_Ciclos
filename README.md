@@ -17,7 +17,7 @@ Repositorio para el tercer taller del curso de Lógica de Programación, enfocad
 
 - **Menu_Infinito.java**: Menu que se repite de manera indefinida hasta que el usuario elige salir. Cuenta con 4 opciones de problemas que se resuelven usando ciclos.
 
-- **Teoria_Ciclos.md**: Archivo Markdown con las respuestas de las preguntas de teoría de Ciclos en Java propuestas por el profesor.
+- **Ciclis.pptx**: Presentación de PowerPoint con las respuestas de las preguntas de teoría de Ciclos en Java propuestas por el profesor.
 
 - **README.md**: Lo que estás leyendo en este momento.
 
