@@ -3,7 +3,16 @@ import java.util.Scanner;
 
 public class Juego_Adivinar {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner lector = new Scanner(System.in);
+        int limInf = 0;
+        int limSup = 0;
+        int intento = 0;
+        int intentos = 0;
+        int secreto;
+        boolean infOk = false;
+        boolean supOk = false;
+        boolean intentoOk;
+        boolean acerto = false;
 
         System.out.println("============================================================");
         System.err.println("  ___      _ _       _                    _                                        \r\n" + //
@@ -16,67 +25,59 @@ public class Juego_Adivinar {
                         "                                                                                   ");
         System.out.println("============================================================");
 
-        int n = 0;
-        boolean nValido = false;
-        while (!nValido) {
+        while (!infOk) {
             try {
                 System.out.print("Ingresa el límite inferior (n): ");
-                n = sc.nextInt();
-                nValido = true;
+                limInf = lector.nextInt();
+                infOk = true;
             } catch (InputMismatchException e) {
                 System.out.println("Eso no es un número válido. Intenta de nuevo.");
-                sc.next();
+                lector.next();
             }
         }
 
-        int m = 0;
-        boolean mValido = false;
-        while (!mValido) {
+        while (!supOk) {
             try {
                 System.out.print("Ingresa el límite superior (m): ");
-                m = sc.nextInt();
-                mValido = true;
+                limSup = lector.nextInt();
+                supOk = true;
             } catch (InputMismatchException e) {
                 System.out.println("Eso no es un número válido. Intenta de nuevo.");
-                sc.next();
+                lector.next();
             }
         }
 
-        int numeroSecreto = (int) (Math.random() * (m - n + 1)) + n;
+        secreto = (int) (Math.random() * (limSup - limInf + 1)) + limInf;
 
-        int intento;
-        boolean acerto = false;
-        int intentos = 0;
-
-        System.out.println("Adivina el número entre " + n + " y " + m);
+        System.out.println("Adivina el número entre " + limInf + " y " + limSup);
 
         while (!acerto) {
-            boolean intentoValido = false;
+            intentoOk = false;
             intento = 0;
 
-            while (!intentoValido) {
+            while (!intentoOk) {
                 try {
                     System.out.print("Tu intento: ");
-                    intento = sc.nextInt();
-                    intentoValido = true;
+                    intento = lector.nextInt();
+                    intentoOk = true;
                 } catch (InputMismatchException e) {
                     System.out.println("Eso no es un número válido. Intenta de nuevo.");
-                    sc.next();
+                    lector.next();
                 }
             }
 
             intentos++;
 
-            if (intento == numeroSecreto) {
+            if (intento == secreto) {
                 System.out.println("¡Felicidades! Adivinaste en " + intentos + " intentos.");
                 acerto = true;
-            } else if (intento < numeroSecreto) {
+            } else if (intento < secreto) {
                 System.out.println("El número secreto es mayor. Intenta de nuevo.");
             } else {
                 System.out.println("El número secreto es menor. Intenta de nuevo.");
             }
         }
 
-        sc.close();
+        lector.close();
     }
 }

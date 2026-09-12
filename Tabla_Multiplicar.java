@@ -3,7 +3,9 @@ import java.util.Scanner;
 
 public class Tabla_Multiplicar {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner lector = new Scanner(System.in);
+        int numTabla = 0;
+        boolean numOk = false;
 
         System.out.println("==================================================================================");
         System.err.println(" _____     _     _             _       ___  ___      _ _   _       _ _                \r\n" + //
@@ -16,26 +18,23 @@ public class Tabla_Multiplicar {
                         "                                                            |_|                       ");
         System.out.println("==================================================================================");
 
-        int numero = 0;
-        boolean valido = false;
-
-        while (!valido) {
+        while (!numOk) {
             try {
                 System.out.print("Ingresa el número del que quieres la tabla: ");
-                numero = sc.nextInt();
-                valido = true;
+                numTabla = lector.nextInt();
+                numOk = true;
             } catch (InputMismatchException e) {
                 System.out.println("Eso no es un número válido. Intenta de nuevo.");
-                sc.next();
+                lector.next();
             }
         }
 
-        System.out.println("Tabla del " + numero + ":");
+        System.out.println("Tabla del " + numTabla + ":");
 
-        for (int i = 1; i <= 10; i++) {
-            System.out.println(numero + " x " + i + " = " + (numero * i));
+        for (int mult = 1; mult <= 10; mult++) {
+            System.out.println(numTabla + " x " + mult + " = " + (numTabla * mult));
         }
 
-        sc.close();
+        lector.close();
     }
 }
